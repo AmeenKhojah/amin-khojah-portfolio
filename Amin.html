@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ameen Nabil Khojah - Personal Webpage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Ameen Nabil Khojah</h1>
+        <p>Welcome to my personal webpage</p>
+    </header>
+    <nav>
+        <a href="#about" class="nav-link" data-target="about">About Me</a>
+        <a href="#projects" class="nav-link" data-target="projects">Projects</a>
+        <a href="#contact" class="nav-link" data-target="contact">Contact Information</a>
+        <a href="#cv" class="nav-link" data-target="cv">CV</a>
+    </nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm Ameen Nabil Khojah. I am passionate about technology and love working on innovative projects. Here, you can find information about my projects and my professional background.</p>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>Details about your projects will go here. You can list and describe your projects, providing links or images as necessary.</p>
+    </section>
+    <section id="contact">
+        <h2>Contact Information</h2>
+        <p>You can contact me via email at <a href="mailto:amin.n.khojah@gmail.com">amin.n.khojah@gmail.com</a>.</p>
+    </section>
+    <section id="cv">
+        <h2>CV</h2>
+        <p>You can <a href="Ameen Khojah CV.pdf" target="_blank">view my CV here</a> or <a href="Ameen Khojah CV.pdf" download>download my CV here</a>.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Ameen Nabil Khojah. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                document.querySelectorAll('section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                const targetSection = document.getElementById(this.dataset.target);
+                targetSection.classList.add('active');
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>

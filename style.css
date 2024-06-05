@@ -1,0 +1,101 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0e0e0;
+    color: #333;
+}
+header {
+    background-color: #002147;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #004080;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+nav a {
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+}
+nav a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffcc00;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+nav a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+nav a:hover {
+    background-color: #0059b3;
+    color: #ffcc00;
+}
+section {
+    padding: 3rem;
+    margin: 2rem auto;
+    background-color: white;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    transition: all 0.5s ease-in-out;
+    transform: scale(0.95);
+}
+section.active {
+    opacity: 1;
+    transform: scale(1);
+}
+section h2 {
+    color: #004080;
+    border-bottom: 2px solid #002147;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+section p {
+    line-height: 1.6;
+}
+footer {
+    background-color: #002147;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+a {
+    color: #004080;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover {
+    color: #ffcc00;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+section:last-of-type {
+    margin-bottom: 4rem; /* Adjust the value as needed */
+}

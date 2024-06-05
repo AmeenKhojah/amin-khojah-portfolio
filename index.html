@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ameen Nabil Khojah - Personal Webpage</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -19,8 +20,7 @@
     </nav>
     <section id="about">
         <h2>About Me</h2>
-        <p>Hello! Hello! I'm Ameen Nabil Khojah, a passionate technologist deeply immersed in Artificial Intelligence and 	Computer Science. Currently, I'm pursuing my Bachelor of Science in Computer Science at King Abdulaziz University with a 	GPA of 4.76. I have a proven track record in national competitions like the Robotics Olympiad, highlighting my analytical 	skills and innovative thinking. My experiences in retail sales have strengthened my communication and negotiation skills. 	Explore my projects and professional background to learn more about my work. </p>
-
+        <p>Hello! I'm Ameen Nabil Khojah, a passionate technologist deeply immersed in Artificial Intelligence and Computer Science. Currently, I'm pursuing my Bachelor of Science in Computer Science at King Abdulaziz University with a GPA of 4.76. I have a proven track record in national competitions like the Robotics Olympiad, highlighting my analytical skills and innovative thinking. My experiences in retail sales have strengthened my communication and negotiation skills. Explore my projects and professional background to learn more about my work.</p>
     </section>
     <section id="projects">
         <h2>Projects</h2>
@@ -28,16 +28,29 @@
     </section>
     <section id="contact">
         <h2>Contact Information</h2>
-        <p>You can contact me via email at <a href="mailto:amin.n.khojah@gmail.com">amin.n.khojah@gmail.com</a>.</p>
+        <p>You can contact me via the following methods:</p>
+        <ul>
+            <li>
+                <i class="fas fa-envelope contact-icon"></i>
+                Email: <a href="mailto:amin.n.khojah@gmail.com">amin.n.khojah@gmail.com</a>
+            </li>
+            <li>
+                <i class="fas fa-phone contact-icon"></i>
+                Mobile: <a href="tel:+966553794444">(966) 55 3794444</a>
+            </li>
+            <li>
+                <i class="fas fa-map-marker-alt contact-icon"></i>
+                Address: P.O. Box 5155, Jeddah 23615 - 7803, Kingdom of Saudi Arabia
+            </li>
+        </ul>
     </section>
     <section id="cv">
         <h2>CV</h2>
-        <p>You can <a href="Ameen Khojah CV.pdf" target="_blank">view my CV here</a> or <a href="Ameen Khojah CV.pdf" download>download my CV here</a>.</p>
+        <p>You can <a href="Ameen Khojah CV.pdf" target="_blank">view my CV here</a> or <a href="Ameen Khojah CV.pdf" onclick="forceDownload(event, 'Ameen Khojah CV.pdf')">download my CV here</a>.</p>
     </section>
     <footer>
         <p>&copy; 2024 Ameen Nabil Khojah. All rights reserved.</p>
     </footer>
-
     <script>
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function (event) {
@@ -50,6 +63,16 @@
                 targetSection.scrollIntoView({ behavior: 'smooth' });
             });
         });
+
+        function forceDownload(event, url) {
+            event.preventDefault();
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = url.substring(url.lastIndexOf('/') + 1);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
     </script>
 </body>
 </html>

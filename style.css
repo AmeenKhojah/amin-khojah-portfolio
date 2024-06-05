@@ -88,6 +88,18 @@ a {
 a:hover {
     color: #ffcc00;
 }
+.contact-icon {
+    margin-right: 8px;
+    color: #004080;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+ul li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
 @keyframes fadeIn {
     from {
         opacity: 0;
